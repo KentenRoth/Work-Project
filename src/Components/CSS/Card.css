@@ -1,0 +1,23 @@
+.container {
+	display: block;
+	max-width: 350px;
+	padding: 10px;
+}
+
+.CardList {
+	padding: 20px;
+}
+
+.card {
+	background-color: #20a120;
+	border: solid 2px #ffffff;
+	border-radius: 5px;
+	color: black;
+	max-width: 300px;
+	text-align: center;
+}
+
+hr {
+	border: solid 1px black;
+	margin: 10px;
+}
