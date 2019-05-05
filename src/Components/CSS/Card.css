@@ -1,11 +1,18 @@
 .container {
 	display: block;
-	max-width: 350px;
+	max-width: 1000px;
 	padding: 10px;
 }
 
 .CardList {
-	padding: 20px;
+	padding: 25px 0 25px 0;
+}
+
+.cardListItems {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-gap: 10px 5px;
+	justify-items: center;
 }
 
 .card {
@@ -13,7 +20,7 @@
 	border: solid 2px #ffffff;
 	border-radius: 5px;
 	color: black;
-	max-width: 300px;
+	width: 300px;
 	text-align: center;
 }
 

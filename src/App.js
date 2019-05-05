@@ -6,16 +6,17 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			keytag: Number,
-			year: Number,
-			make: '',
-			model: '',
-			service: ''
+			cars: []
 		};
+	}
+	componentDidMount() {
+		fetch('/cars.json')
+			.then(response => response.json())
+			.then(data => this.setState(data));
 	}
 
 	render() {
-		return <CardList />;
+		return <CardList cars={this.state.cars} />;
 	}
 }
 

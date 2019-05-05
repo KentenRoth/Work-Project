@@ -2,15 +2,16 @@ import React from 'react';
 import './CSS/Card.css';
 
 const CarCard = props => {
+	const { keytag, year, make, model, service } = props.car;
 	return (
-		<div class="card">
-			<h1>20758</h1>
+		<div className="card">
+			<h1>{keytag}</h1>
 			<hr />
-			<h2>2015</h2>
-			<h2>Ford</h2>
-			<h2>Focus</h2>
+			<h2>{year}</h2>
+			<h2>{make}</h2>
+			<h2>{model}</h2>
 			<hr />
-			<h3>Set of 4</h3>
+			<h3>{service}</h3>
 		</div>
 	);
 };
