@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
-import CardList from './Components/CardList';
-import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Car from './Components/Car/Car';
+import AddCar from './Components/AddCar/AddCar';
+import Login from './Components/Login/Login';
 
 class App extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			cars: []
-		};
-	}
-	componentDidMount() {
-		fetch('/cars.json')
-			.then(response => response.json())
-			.then(data => this.setState(data));
-	}
-
 	render() {
-		return <CardList cars={this.state.cars} />;
+		return (
+			<BrowserRouter>
+				<Switch>
+					<Route path="/" exact component={Login} />
+					<Route path="/addcar" component={AddCar} />
+					<Route path="/cars" component={Car} />
+				</Switch>
+			</BrowserRouter>
+		);
 	}
 }
 
