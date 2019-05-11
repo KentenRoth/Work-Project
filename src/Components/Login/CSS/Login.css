@@ -27,7 +27,7 @@
 }
 
 .username,
-.private {
+.password {
 	background: #313131;
 	border: none;
 	border-radius: 2px;
@@ -41,7 +41,7 @@
 }
 
 .username-fail,
-.private-fail {
+.password-fail {
 	background: #960000;
 	border: #ff0000;
 	border-radius: 2px;

@@ -1,0 +1,45 @@
+.year,
+.make,
+.model,
+.service {
+	background: #313131;
+	border: none;
+	border-radius: 2px;
+	color: #797979;
+	font-style: bold;
+	height: 25px;
+	font-size: 20px;
+	margin-bottom: 15px;
+	padding-left: 5px;
+	width: 100%;
+}
+
+::placeholder {
+	color: #797979;
+	font-size: 15px;
+	font-style: italic;
+	opacity: 0.7;
+}
+
+.submitButton,
+.clearButton {
+	background: #313131;
+	border: none;
+	color: #797979;
+	height: 35px;
+	font-size: 15px;
+	margin: 0 10px;
+	transition: 0.5s;
+	width: 40%;
+}
+
+.submitButton:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+
+.clearButton:hover {
+	background: rgb(109, 1, 1);
+	cursor: pointer;
+	transform: scale(1.1);
+}

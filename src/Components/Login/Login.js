@@ -10,7 +10,7 @@ export default () => {
 						<p className="error">*Username or Password Incorrect</p>
 						<input className="username" placeholder="Username" />
 						<input
-							className="private"
+							className="password"
 							type="password"
 							placeholder="Password"
 						/>
