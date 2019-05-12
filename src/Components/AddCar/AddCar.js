@@ -117,11 +117,7 @@ class AddCar extends Component {
 							placeholder="Service ex. Set of 4"
 						/>
 						<br />
-						<button
-							type="button"
-							onClick={this.handleSubmit}
-							className="submitButton"
-						>
+						<button type="submit" className="submitButton">
 							Submit
 						</button>
 						<button
