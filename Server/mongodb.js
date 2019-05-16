@@ -14,9 +14,12 @@ MongoClient.connect(
 
 		const db = client.db(databaseName);
 
-		db.collection('users').insertOne({
-			name: 'Kent',
-			age: 27
+		db.collection('cars').insertOne({
+			keytag: '254368',
+			year: '2014',
+			make: 'Honda',
+			model: 'Accord',
+			service: 'Tire work'
 		});
 	}
 );
