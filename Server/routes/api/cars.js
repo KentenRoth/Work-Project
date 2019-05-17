@@ -4,7 +4,12 @@ const router = express.Router();
 const Car = require('../../models/Car');
 
 router.get('/', (req, res) => {
-	Car.find().then(cars => res.json(cars));
+	Car.find().then(cars => {
+		res.json(cars),
+			e => {
+				res.status(400).send(e);
+			};
+	});
 });
 
 router.post('/', (req, res) => {
