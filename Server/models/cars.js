@@ -1,6 +1,7 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-var Car = mongoose.model('Car', {
+const CarSchema = new Schema({
 	keytag: {
 		type: Number,
 		required: true,
@@ -33,4 +34,4 @@ var Car = mongoose.model('Car', {
 	}
 });
 
-module.exports = Car;
+module.exports = Car = mongoose.model('car', CarSchema);
