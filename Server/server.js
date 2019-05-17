@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+const cars = require('./routes/api/cars');
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -12,6 +14,8 @@ mongoose
 	.connect(db)
 	.then(() => console.log('Mongo is Connected'))
 	.catch(err => console.log(err));
+
+app.use('/api/cars', cars);
 
 const port = process.env.PORT || 5000;
 
