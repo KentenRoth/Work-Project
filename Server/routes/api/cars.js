@@ -30,4 +30,14 @@ router.post('/', (req, res) => {
 	);
 });
 
+router.delete('/:id', (req, res) => {
+	Car.findById(req.params.id).then(
+		car => {
+			car.remove().then(() => res.json({ car }));
+		},
+		e => {
+			res.status(400).send(e);
+		}
+	);
+});
 module.exports = router;
