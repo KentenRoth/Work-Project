@@ -28,3 +28,20 @@ hr {
 	border: solid 1px black;
 	margin: 10px;
 }
+
+.deleteButton {
+	background: rgb(131, 0, 0);
+	border: 1px solid white;
+	border-radius: 5px;
+	color: white;
+	font-size: 0.8em;
+	font-weight: 900;
+	margin-bottom: 10px;
+	padding: 10px 20px;
+	transition: 500ms;
+}
+
+.deleteButton:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}

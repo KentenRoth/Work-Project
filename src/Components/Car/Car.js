@@ -2,17 +2,26 @@ import React, { Component } from 'react';
 import CardList from './CardList';
 
 import { connect } from 'react-redux';
-import { getCars } from '../../actions/carActions';
+import { getCars, deleteCar } from '../../actions/carActions';
 import PropTypes from 'prop-types';
 
 class App extends Component {
+	constructor(props) {
+		super(props);
+		this.onDeleteClick = this.onDeleteClick.bind(this);
+	}
+
 	componentDidMount() {
 		this.props.getCars();
 	}
 
+	onDeleteClick(id) {
+		this.props.deleteCar(id);
+	}
+
 	render() {
 		const { cars } = this.props.car;
-		return <CardList cars={cars} />;
+		return <CardList onDeleteClick={this.onDeleteClick} cars={cars} />;
 	}
 }
 
@@ -27,5 +36,5 @@ const mapStateToProps = state => ({
 
 export default connect(
 	mapStateToProps,
-	{ getCars }
+	{ getCars, deleteCar }
 )(App);

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
 import './CSS/AddCar.css';
 
 function validate(keytag, year, make, model, service) {
@@ -29,6 +30,7 @@ class AddCar extends Component {
 		super(props);
 
 		this.state = {
+			id: uuid(),
 			keytag: '',
 			year: '',
 			make: '',
