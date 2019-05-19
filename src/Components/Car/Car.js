@@ -1,22 +1,31 @@
 import React, { Component } from 'react';
 import CardList from './CardList';
 
+import { connect } from 'react-redux';
+import { getCars } from '../../actions/carActions';
+import PropTypes from 'prop-types';
+
 class App extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			cars: []
-		};
-	}
 	componentDidMount() {
-		fetch('/cars.json')
-			.then(response => response.json())
-			.then(data => this.setState(data));
+		this.props.getCars();
 	}
 
 	render() {
-		return <CardList cars={this.state.cars} />;
+		const { cars } = this.props.car;
+		return <CardList cars={cars} />;
 	}
 }
 
-export default App;
+App.propTypes = {
+	getCars: PropTypes.func.isRequired,
+	car: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+	car: state.car
+});
+
+export default connect(
+	mapStateToProps,
+	{ getCars }
+)(App);
