@@ -62,6 +62,7 @@ class AddCar extends Component {
 			model: model,
 			service: service
 		};
+
 		this.props.addCar(newCar);
 		this.handleClear();
 	};
@@ -84,11 +85,21 @@ class AddCar extends Component {
 		});
 	};
 
+	checkScreen = () => {
+		this.props.history.push('/cars');
+	};
+
 	render() {
 		const { errors } = this.state;
 		return (
 			<div className="container">
 				<div className="box">
+					<button
+						className="carScreenButton"
+						onClick={this.checkScreen}
+					>
+						Car Screen
+					</button>
 					{errors.map(error => (
 						<p key={error}>Error: {error}</p>
 					))}
