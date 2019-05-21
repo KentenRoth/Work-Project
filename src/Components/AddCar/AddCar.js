@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { addCar } from '../../actions/carActions';
 import uuid from 'uuid';
 import './CSS/AddCar.css';
+import { connect } from 'react-redux';
 
 function validate(keytag, year, make, model, service) {
 	const errors = [];
@@ -51,6 +53,17 @@ class AddCar extends Component {
 			this.setState({ errors });
 			return;
 		}
+
+		const newCar = {
+			id: uuid(),
+			keytag: keytag,
+			year: year,
+			make: make,
+			model: model,
+			service: service
+		};
+		this.props.addCar(newCar);
+		this.handleClear();
 	};
 
 	handleChange = e => {
@@ -136,4 +149,11 @@ class AddCar extends Component {
 	}
 }
 
-export default AddCar;
+const mapStateToProps = state => ({
+	car: state.car
+});
+
+export default connect(
+	mapStateToProps,
+	{ addCar }
+)(AddCar);

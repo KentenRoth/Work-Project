@@ -12,3 +12,10 @@ export const deleteCar = id => {
 		payload: id
 	};
 };
+
+export const addCar = car => {
+	return {
+		type: ADD_CAR,
+		payload: car
+	};
+};

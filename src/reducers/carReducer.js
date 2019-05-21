@@ -41,6 +41,11 @@ export default function(state = initialState, action) {
 				...state,
 				cars: state.cars.filter(car => car.id !== action.payload)
 			};
+		case ADD_CAR:
+			return {
+				...state,
+				cars: [action.payload, ...state.cars]
+			};
 		default:
 			return state;
 	}
