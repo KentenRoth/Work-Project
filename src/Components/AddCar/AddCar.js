@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { addCar } from '../../actions/carActions';
-import uuid from 'uuid';
 import './CSS/AddCar.css';
 import { connect } from 'react-redux';
 
@@ -32,7 +31,6 @@ class AddCar extends Component {
 		super(props);
 
 		this.state = {
-			id: uuid(),
 			keytag: '',
 			year: '',
 			make: '',
@@ -55,13 +53,13 @@ class AddCar extends Component {
 		}
 
 		const newCar = {
-			id: uuid(),
 			keytag: keytag,
 			year: year,
 			make: make,
 			model: model,
 			service: service
 		};
+
 		this.props.addCar(newCar);
 		this.handleClear();
 	};
@@ -84,11 +82,21 @@ class AddCar extends Component {
 		});
 	};
 
+	checkScreen = () => {
+		this.props.history.push('/cars');
+	};
+
 	render() {
 		const { errors } = this.state;
 		return (
 			<div className="container">
 				<div className="box">
+					<button
+						className="carScreenButton"
+						onClick={this.checkScreen}
+					>
+						Car Screen
+					</button>
 					{errors.map(error => (
 						<p key={error}>Error: {error}</p>
 					))}

@@ -3,7 +3,7 @@ import './CSS/Card.css';
 
 class CarCard extends Component {
 	render() {
-		const { id, keytag, year, make, model, service } = this.props.car;
+		const { _id, keytag, year, make, model, service } = this.props.car;
 
 		return (
 			<div className="card">
@@ -17,7 +17,7 @@ class CarCard extends Component {
 				<button
 					className="deleteButton"
 					onClick={() => {
-						this.props.onDeleteClick(id);
+						this.props.onDeleteClick(_id);
 					}}
 				>
 					Car Completed

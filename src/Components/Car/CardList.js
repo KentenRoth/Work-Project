@@ -8,7 +8,7 @@ class CardList extends Component {
 			return (
 				<CarCard
 					onDeleteClick={this.props.onDeleteClick}
-					key={info.keytag}
+					key={info._id}
 					car={info}
 				/>
 			);

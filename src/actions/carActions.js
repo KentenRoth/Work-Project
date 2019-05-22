@@ -1,21 +1,36 @@
-import { GET_CARS, ADD_CAR, DELETE_CAR } from './types';
+import { GET_CARS, ADD_CAR, DELETE_CAR, CARS_LOADING } from './types';
+import axios from 'axios';
 
-export const getCars = () => {
-	return {
-		type: GET_CARS
-	};
+export const getCars = () => dispatch => {
+	dispatch(setCarsLoading());
+	axios.get('/api/cars').then(res =>
+		dispatch({
+			type: GET_CARS,
+			payload: res.data
+		})
+	);
 };
 
-export const deleteCar = id => {
-	return {
-		type: DELETE_CAR,
-		payload: id
-	};
+export const addCar = car => dispatch => {
+	axios.post('/api/cars', car).then(res =>
+		dispatch({
+			type: ADD_CAR,
+			payload: res.data
+		})
+	);
 };
 
-export const addCar = car => {
+export const deleteCar = id => dispatch => {
+	axios.delete(`/api/cars/${id}`).then(res =>
+		dispatch({
+			type: DELETE_CAR,
+			payload: id
+		})
+	);
+};
+
+export const setCarsLoading = () => {
 	return {
-		type: ADD_CAR,
-		payload: car
+		type: CARS_LOADING
 	};
 };
