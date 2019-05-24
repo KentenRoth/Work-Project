@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const path = requier('path');
+const path = require('path');
 
 const cars = require('./routes/api/cars');
 
@@ -19,10 +19,10 @@ mongoose
 app.use('/api/cars', cars);
 
 if (process.env.NODE_ENV === 'production') {
-	app.use(express.static('build'));
+	app.use(express.static('client/build'));
 
 	app.get('*', (req, res) => {
-		res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+		res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 	});
 }
 
