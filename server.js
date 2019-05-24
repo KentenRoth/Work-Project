@@ -16,14 +16,14 @@ if (process.env.NODE_ENV === 'production') {
 		.connect(db)
 		.then(() => console.log('Mongo is Connected'))
 		.catch(err => console.log(err));
+} else {
+	const db = require('./config/keys').mongoURI;
+
+	mongoose
+		.connect(db)
+		.then(() => console.log('Mongo is Connected'))
+		.catch(err => console.log(err));
 }
-
-const db = require('./config/keys').mongoURI;
-
-mongoose
-	.connect(db)
-	.then(() => console.log('Mongo is Connected'))
-	.catch(err => console.log(err));
 
 app.use('/api/cars', cars);
 
