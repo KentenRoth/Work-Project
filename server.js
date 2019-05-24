@@ -9,6 +9,15 @@ const app = express();
 
 app.use(bodyParser.json());
 
+if (process.env.NODE_ENV === 'production') {
+	const db = process.env.MONGO_URI;
+
+	mongoose
+		.connect(db)
+		.then(() => console.log('Mongo is Connected'))
+		.catch(err => console.log(err));
+}
+
 const db = require('./config/keys').mongoURI;
 
 mongoose
