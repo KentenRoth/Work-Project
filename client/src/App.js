@@ -13,8 +13,8 @@ class App extends Component {
 			<Provider store={store}>
 				<BrowserRouter>
 					<Switch>
-						<Route path="/" exact component={Login} />
-						<Route path="/addcar" component={AddCar} />
+						<Route path="/" exact component={AddCar} />
+						<Route path="/login" component={Login} />
 						<Route path="/cars" component={Car} />
 					</Switch>
 				</BrowserRouter>
