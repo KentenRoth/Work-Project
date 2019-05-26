@@ -12,9 +12,9 @@ class App extends Component {
 	}
 
 	componentDidMount() {
+		this.props.getCars();
 		this.interval = setInterval(() => {
 			this.props.getCars();
-			console.log('reload');
 		}, 60000);
 	}
 
