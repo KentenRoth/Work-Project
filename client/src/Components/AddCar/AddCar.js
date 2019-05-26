@@ -7,6 +7,7 @@ function validate(keytag, year, make, model, service) {
 	const errors = [];
 	const keytagRegex = new RegExp(/([0-9]{6})/g);
 	const yearRegex = new RegExp(/([0-9]{4})/g);
+
 	if (keytagRegex.test(keytag) === false) {
 		errors.push('Keytag must be 6 numbers');
 	}
@@ -36,7 +37,6 @@ class AddCar extends Component {
 			make: '',
 			model: '',
 			service: '',
-
 			errors: []
 		};
 	}
@@ -78,7 +78,8 @@ class AddCar extends Component {
 			year: '',
 			make: '',
 			model: '',
-			service: ''
+			service: '',
+			errors: []
 		});
 	};
 

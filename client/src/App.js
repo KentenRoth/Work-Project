@@ -14,8 +14,8 @@ class App extends Component {
 				<BrowserRouter>
 					<Switch>
 						<Route path="/" exact component={AddCar} />
-						<Route path="/login" component={Login} />
 						<Route path="/cars" component={Car} />
+						<Route path="/login" component={Login} />
 					</Switch>
 				</BrowserRouter>
 			</Provider>
